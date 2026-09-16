@@ -113,8 +113,9 @@ function App() {
     setCurrentProblem(generateProblem(mode, difficulty)); setSelectedAnswer(null); setIsCorrect(null); setPetMood('thinking');
   };
 
-  const handleAnswer = (ans) => {
+    const handleAnswer = (ans) => {
     if (selectedAnswer !== null) return;
+    if (!currentProblem) return;
     setSelectedAnswer(ans);
     const correct = ans === currentProblem.answer;
     setIsCorrect(correct);
